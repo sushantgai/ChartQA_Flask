@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chart Analysis</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <h1>📊 Chart Analysis</h1>
+
+    <!-- Image Upload Section -->
+    <div id="uploadSection">
+        <form id="uploadForm" enctype="multipart/form-data">
+            <label for="chart">Upload Chart:</label>
+            <input type="file" id="chart" name="image" accept="image/*">
+            <button type="submit">Upload</button>
+        </form>
+        <div id="uploadStatus"></div>
+    </div>
+
+    <!-- Image Display Section -->
+    <div id="imageSection" style="display: none;">
+        <h2>Uploaded Chart:</h2>
+        <img id="chartPreview" src="" alt="Uploaded Chart" style="max-width: 100%; height: auto;">
+    </div>
+
+    <!-- Analysis Section -->
+    <div id="analysisSection" style="display: none;">
+        <h2>Analyze Chart</h2>
+        <label for="query">Ask a question:</label>
+        <input type="text" id="query" placeholder="E.g., What is the highest value?">
+        <br>
+        <input type="checkbox" id="use_cot">
+        <label for="use_cot">Enable Chain-of-Thought</label>
+        <button id="analyzeButton">Analyze</button>
+        <div id="analysisResults"></div>
+    </div>
+
+    <!-- Extract Data Section -->
+    <div id="extractSection" style="display: none;">
+        <h2>Extract Data</h2>
+        <button id="extractButton">Extract Data Points</button>
+        <div id="extractStatus"></div>
+    </div>
+
+    <!-- Download Section -->
+    <div id="downloadSection" style="display: none;">
+        <h2>Download Data</h2>
+        <a id="downloadLink" href="#" download="extracted_data.csv">Download CSV</a>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
