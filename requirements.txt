@@ -1,7 +1,11 @@
-flask
+Flask
 torch
-transformers
-pillow
-requests
+Pillow
 pandas
-matplotlib
+transformers
+numpy
+base64
+re
+os
+json
+traceback
